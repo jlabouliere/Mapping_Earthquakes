@@ -15,3 +15,21 @@ let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/t
 });
 // Then we add our 'graymap' tile layer to the map.
 streets.addTo(map);
+
+
+// City markers
+cities = [];
+cities.push({ coord: [40.7648, -73.9808], name: "New York" });
+cities.push({ coord: [41.881832, -87.623177], name: "Chicago" });
+cities.push({ coord: [29.749907, -95.358421], name: "Houston" });
+cities.push({ coord: [34.052235, -118.243683], name: "L.A." });
+cities.push({
+    coord: [41.257160, -95.995102],
+    name: "Omaha"
+});
+// Add code to create a marker for each city below and add it to the map
+cities.forEach(city => {
+    L.marker(city.coord, {
+        draggable: false,
+    }).addTo(map).bindPopup(city.name + " is at " + city.coord)
+});
