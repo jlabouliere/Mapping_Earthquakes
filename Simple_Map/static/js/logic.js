@@ -14,6 +14,7 @@ let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/t
     accessToken: API_KEY
 });
 // Then we add our 'graymap' tile layer to the map.
+<<<<<<< HEAD
 streets.addTo(map);
 
 
@@ -33,3 +34,6 @@ cities.forEach(city => {
         draggable: false,
     }).addTo(map).bindPopup(city.name + " is at " + city.coord)
 });
+=======
+streets.addTo(map);
+>>>>>>> b80024b2e2107df52230ac84b4a09df4ad2b5202
